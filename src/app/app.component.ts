@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +6,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  data: string = 'hey';
-  formB!: FormGroup;
-
+  selectedDepartment!: string;
+  selectedSchool!: string;
   departments = ['apple', 'microsft', 'google'];
+  schools = ['khanyolwethu', 'cput', 'uwc', 'nomzamo high'];
 
-  test(event: string) {
-    console.log('Even', event);
+  selectDepartment(value: string) {
+    // Use this value to do wat ever you want
+    console.log('Department Value', value);
   }
-  constructor(private fb: FormBuilder) {
-    this.formB = this.fb.group({
-      data: ['haha', Validators.required],
-    });
+
+  selectSchool(value: string) {
+    // Use this value to do wat ever you want
+    console.log('School Value', value);
   }
 }

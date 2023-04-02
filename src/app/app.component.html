@@ -1,10 +1,19 @@
-<div style="padding: 200px">
-  <!-- <app-choose-quantity [(ngModel)]="data" (ngModelChange)="test($event)" /> -->
-  <form [formGroup]="formB">
-    <app-select [options]="departments" formControlName="data" />
-  </form>
-  <br />
-  <h1>{{ formB.controls["data"].value }}</h1>
+<div style="padding: 50px">
+  <h1>Department</h1>
+  <app-select
+    [options]="departments"
+    [(ngModel)]="selectedDepartment"
+    (ngModelChange)="selectDepartment($event)"
+  />
+  <p>Selected Department: {{ selectedDepartment }}</p>
 </div>
 
-<!-- (ngModelChange)="test($event)" -->
+<div style="padding: 50px">
+  <h1>School</h1>
+  <app-select
+    [options]="schools"
+    [(ngModel)]="selectedSchool"
+    (ngModelChange)="selectSchool($event)"
+  />
+  <p>Selected School: {{ selectedSchool }}</p>
+</div>

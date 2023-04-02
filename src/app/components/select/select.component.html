@@ -8,13 +8,15 @@
     [matAutocomplete]="auto"
     (input)="doInput()"
     [formControl]="myControl"
-    (change)="doChange(myControl.value)"
+    [disabled]="disabled"
   />
-  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+  <mat-autocomplete
+    autoActiveFirstOption
+    #auto="matAutocomplete"
+    (optionSelected)="select($event)"
+  >
     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
       {{ option }}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
-
-{{ myControl.value }}

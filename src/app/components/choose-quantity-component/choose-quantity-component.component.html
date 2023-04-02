@@ -1,0 +1,25 @@
+<div class="flex flex-row items-center px-4 py-4">
+  <div>
+    <input
+      class="nordex-input"
+      type="text"
+      placeholder="0.00"
+      [formControl]="inputText"
+      inputmode="numeric"
+      autocomplete="off"
+      pattern="[0-9]+([.][0-9]+)?"
+      [ngClass]="disabledInput(disabled)"
+      [readonly]="disabled"
+      (input)="doInput()"
+      (blur)="doBlur()"
+    />
+  </div>
+  <div class="ml-4">
+    <label class="flex flex-row text-gray-500 font-bold mr-10">
+      <input class="mr-3 leading-tight" name="other_check" type="checkbox" />
+      <span class="text-sm"> </span>
+    </label>
+  </div>
+</div>
+
+<!-- (change)="onLockSelect($event.target?.checked)" -->
